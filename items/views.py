@@ -8,4 +8,4 @@ def index(request):
         'item_list': Item.objects.all(),
         'message': 'Hello, World!',
     }
-    return render(request, 'index.html', context)
+    return render(request, 'items/index.html', context)

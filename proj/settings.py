@@ -9,12 +9,13 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+IS_PYTHONANYWHERE = 'PYTHONANYWHERE_DOMAIN' in os.environ
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -25,7 +26,10 @@ SECRET_KEY = 'django-insecure-=*d_@vbj98ujt76t1@mk7zs-ms#eq_r*a%w9r#$%aac)m6o_q)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mariorojas.pythonanywhere.com']
+if IS_PYTHONANYWHERE:
+    ALLOWED_HOSTS = ['mariorojas.pythonanywhere.com']
+else:
+    ALLOWED_HOSTS = []
 
 
 # Application definition

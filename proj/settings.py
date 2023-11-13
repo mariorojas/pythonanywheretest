@@ -86,7 +86,10 @@ if IS_PYTHONANYWHERE:
             'USER': 'mariorojas',
             'PASSWORD': 'pythonanywhere123$',
             'HOST': 'mariorojas.mysql.pythonanywhere-services.com',
-        }
+        },
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        },
     }
 else:
     DATABASES = {

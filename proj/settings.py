@@ -88,7 +88,7 @@ if IS_PYTHONANYWHERE:
             'HOST': 'mariorojas.mysql.pythonanywhere-services.com',
         },
         'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+            'sql_mode': 'STRICT_TRANS_TABLES',
         },
     }
 else:
